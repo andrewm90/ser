@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cranky
+  labels:
+    app: cranky
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cranky
+  template:
+    metadata:
+      labels:
+        app: cranky
+    spec:
+      volumes:
+      - name: crankypvc  #volume name
+        persistentVolumeClaim:
+          claimName: crankypvc # must match persistent volume claim name
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+          - containerPort: 80
+            name: "http-server"
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html"
+            name: crankypvc # must match volume name
+
+

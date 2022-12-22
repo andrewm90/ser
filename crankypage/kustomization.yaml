@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+resources:
+- crankydep.yaml
+- crankyingress.yaml
+- crankypv.yaml
+- crankypvc.yaml
+- crankysvc.yaml
+- crankycloudflare.yaml
+- crankycloudsecrets.yaml
+

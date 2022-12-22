@@ -1,0 +1,7 @@
+*.yaml
+!crankydep.yaml
+!crankyingress.yaml
+!crankypv.yaml
+!crankypvc.yaml
+!crankysvc.yaml
+!kustomization.yaml
